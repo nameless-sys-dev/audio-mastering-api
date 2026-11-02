@@ -12,7 +12,8 @@ ROOT = "/data"
 # Transitioned from debian_slim to an Ubuntu base image with Python 3.11 injected.
 image = (
     modal.Image.from_registry("ubuntu:22.04", add_python="3.11")
-    .apt_install("ffmpeg", "libsndfile1")
+    # Make sure ca-certificates is installed
+    .apt_install("ffmpeg", "libsndfile1", "ca-certificates")
     .pip_install(
         "fastapi==0.115.12",
         "pydantic==2.11.4",

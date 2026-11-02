@@ -692,7 +692,7 @@ def propose_plan(
     payload = {
         "model": MODEL,
         "temperature": 0.3,
-        "max_tokens": 2048,
+        "max_tokens": 128000,
         "top_p": 0.9,
         "stream": False,
         "reasoning": {"enabled": True},
